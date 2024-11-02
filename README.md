@@ -6,6 +6,16 @@ The service will log the temperature and duty cycle 15 seconds
 after first startup, then it will log it again every 15 minutes.
 The fan speed is adjusted every 5 seconds
 
+# Raspberry Pi OS config
+To get access to the PWM functionality you need to enable it in
+the `/boot/firmware/config.txt` file.
+
+Simply add the following line to the end of `config.txt`
+
+```
+dtoverlay=pwm,pin=12,func=4
+```
+
 # Note
 The Rpi4 cannot drive the fan directly, you will need additional components to achieve this.
 
